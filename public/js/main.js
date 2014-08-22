@@ -25,6 +25,6 @@ require.config({
         'angular-strap-tpl' : ['angular','angular-strap'],
         'ngload': ['angularAMD']
     },
-    deps: ['App'],
+    deps: ['app'],
     urlArgs: "bust=v0.01"
 });
