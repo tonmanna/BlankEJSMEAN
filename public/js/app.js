@@ -1,43 +1,30 @@
 var app = {};
-// Global Define
-Date.prototype.addHours= function(h){
-    consle.log("est");
-    this.setHours(this.getHours()+h);
-    return this;
-}
-
-define(['angularAMD','jquery', 'angular-route', 'angular-resource', 'angular-sanitize', 'angular-animate', 'angular-strap', 'angular-strap-tpl']
-    , function (angularAMD,$) {
-        app = angular.module("MainApp", ['ngRoute','ngSanitize','ngResource','ngAnimate','mgcrea.ngStrap']);
-        app.config(['$routeProvider', '$locationProvider',function ($routeProvider,$locationProvider) {
-            $routeProvider.when("/", angularAMD.route({
-                templateUrl: '/views/index.html', controller: 'MainCtrl',
-                controllerUrl: 'mainctrl',
-                resolve: {
+define(['angularAMD','angular-route', 'angular-resource', 'angular-sanitize', 'angular-animate', 'angular-strap', 'angular-strap-tpl'],
+    function (angularAMD) {
+    app = angular.module("MainApp", ['ngRoute', 'ngSanitize', 'ngResource', 'ngAnimate', 'mgcrea.ngStrap']);
+    app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $routeProvider.when("/", angularAMD.route({
+            templateUrl: '/views/index.html', controller: 'mainCtrl',
+            controllerUrl: './main/controller',
+            resolve: {
 //                ComponentLoad: function () {
 //                }
-                }
-            }))
+            }
+        }))
             .when("/sample", angularAMD.route({
-                templateUrl: '/views/sample.html', controller: 'MainCtrl',
-                controllerUrl: 'mainctrl',
+                templateUrl: '/views/sample/sample.html', controller: 'sampleCtrl',
+                controllerUrl: './sample/controller',
                 resolve: {
 //                ComponentLoad: function () {
 //                }
                 }
             })).otherwise({
-                redirectTo : "/"
+                redirectTo: "/"
             });
-            $locationProvider.html5Mode(false).hashPrefix('!');
-        }]);
-
-        app.controller("GlobalCtrl",function($scope,$location){
-            $scope.CurrentPage = $location.path().replace("/","");
-        });
-
-        requirejs(["directive","filter"],function(){
-            angularAMD.bootstrap(app);
-        });
-
-        return app;
+        $locationProvider.html5Mode(false).hashPrefix('!');
+    }]);
+    requirejs(["config","controller", "directive", "filter"], function () {
+        angularAMD.bootstrap(app);
     });
+    return app;
+});

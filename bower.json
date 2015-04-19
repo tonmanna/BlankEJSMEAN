@@ -15,7 +15,9 @@
     "angularAMD": "^0.2.1",
     "requirejs": "^2.1.14",
     "toastr": "^2.0.3",
-    "q": "^2.0.2"
+    "q": "^2.0.2",
+    "blockUI": "*",
+    "spin.js": "~2.0.2"
   },
   "private": false
 }

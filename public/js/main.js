@@ -13,7 +13,9 @@ require.config({
         'ngload': '/components/angularAMD/ngload.min',
         'bootstrap': '/components/bootstrap/dist/js/bootstrap.min',
         'jquery':  '/components/jquery/dist/jquery.min',
-        'toastr':  '/components/toastr/toastr.min'
+        'toastr':  '/components/toastr/toastr.min',
+        'blockui': '/components/blockUI/jquery.blockUI',
+        'spin' : '/components/spin.js/spin'
     },
     shim: {
         'angularAMD': ['angular'],
@@ -23,7 +25,10 @@ require.config({
         'angular-animate' : ['angular'],
         'angular-strap' : ['angular'],
         'angular-strap-tpl' : ['angular','angular-strap'],
-        'ngload': ['angularAMD']
+        'ngload': ['angularAMD'],
+        'toastr' : ['jquery'],
+        'blockui' : ['jquery'],
+        'sping' : ['jquery']
     },
     deps: ['app'],
     urlArgs: "bust=v0.2"

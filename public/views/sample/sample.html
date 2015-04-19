@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><div class="jumbotron">
+    <h1>Sample Page</h1>
+    <div ng-include="'views/partial/partial.html'"></div>
+    <div class="container">
+        <div class="row" style="padding-top:5px;">
+            <div class="pull-right">
+                <div class="btn btn-default" ng-click="readAllSample()">Refresh</div>
+                <div class="btn btn-info" ng-click="createSample()">Create</div>
+                <div class="btn btn-success" ng-click="showSample('create','xxx',0)">Manual Create</div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <table class="table table-bordered table-hover" ng-init="readAllSample()">
+            <th>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td colspan="7">Configuration</td>
+                </tr>
+            </th>
+            <tr ng-repeat="sample in readSampleData">
+                <td>{{sample._id}}</td>
+                <td>{{sample.Name}}</td>
+                <td>{{sample.bCreate}}</td>
+                <td>{{sample.createDate}}</td>
+                <td>{{sample.lastUpdate}}</td>
+                <td>{{sample.refID}}</td>
+                <td><span class="btn btn-primary" ng-click="showSample('show',sample._id,$index)">Show</span></td>
+                <td><span class="btn btn-warning" ng-click="showSample('edit',sample._id,$index)">Edit</span></td>
+                <td><span class="btn btn-danger" ng-click="deleteConfirm(sample._id,$index)">Delete</span></td>
+            </tr>
+        </table>
+    </div>
+</div>

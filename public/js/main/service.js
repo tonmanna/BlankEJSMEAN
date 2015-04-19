@@ -1,15 +1,17 @@
-define(['app'], function (app) {
-    app.register.factory('MainService', function ($http,$q) {
+define(['../app'], function (app) {
+    app.register.factory('mainService', function ($http,$q) {
         var thisfact = {};
-
         thisfact.GetSample = function(){
+            spinner.show();
             var defer = $q.defer();
             $http({method: 'GET', url: '/sample'}).
-                success(function(data, status, headers, config) {
+                success(function(data) {
+                    spinner.hide();
                     defer.resolve(data);
                 }).
-                error(function(data, status, headers, config) {
-                    defer.reject(data);
+                error(function(err) {
+                    spinner.hide();
+                    defer.reject(err);
                 });
             return defer.promise;
         };

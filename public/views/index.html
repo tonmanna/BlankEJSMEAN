@@ -1,4 +1,10 @@
-<div class="jumbotron">
-    <h1>MEAN Ready 1.2 with auto Reload (My Awesome App) </h1>
-    JSON Result : {{testData}}
+<div class="jumbotron" ng-init="initMT()">
+    <h1>Blank EJS 1.2</h1>
+    <div ng-include="'views/partial/partial.html'"></div>
+    <div class="container">
+        <div class="row" >
+            <h3>Sample Data from JSON get</h3>
+            <span class="label label-info">JSON Result : {{testData}}</span>
+        </div>
+    </div>
 </div>
