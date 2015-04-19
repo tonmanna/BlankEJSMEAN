@@ -4,6 +4,7 @@ This project start from idea with AutoReload MEAN(ejs view) stack for used inter
 
 # Installation
 npm install -g gulp && npm install && bower install
+
 npm start
 
 # How to used
