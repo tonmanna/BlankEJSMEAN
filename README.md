@@ -1,6 +1,6 @@
 # BlankEJSMEAN
 EJS + AngularAMD + Express + Gulp + Template for start with MEAN
-This project start from idea with AutoReload MEAN(ejs view) stack for used internal our company.We just need to share to every one.
+This project get start from idea we need AutoReload browser MEAN(ejs view) stack for used internal our company.We just need to share to every one.
 
 # Installation
 npm install -g gulp && npm install && bower install

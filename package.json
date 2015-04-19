@@ -24,6 +24,7 @@
     "gulp-connect": "^2.2.0",
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
+    "gulp-open": "^0.3.2",
     "mongo-express": "^0.21.0"
   }
 }

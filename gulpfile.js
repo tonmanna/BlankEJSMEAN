@@ -1,10 +1,28 @@
 var gulp = require('gulp');
+var open = require('gulp-open');
 var exec = require('child_process').exec;
 var livereload = require('gulp-livereload');
 var nodemon = require('gulp-nodemon');
 var fs = require('fs');
 
-gulp.task('default',['mongoexpress','nodemon','watchclient'], function() {
+gulp.task('default',['mongoexpress','nodemon','watchclient','openbrower']);
+
+
+gulp.task('openbrower',function(){
+    var options = {
+        url: 'http://localhost:3000',
+        app: 'chrome'
+    };
+    gulp.src('views/index.ejs')
+        .pipe(open('', options));
+
+    // If you wish to start Mongo-Express When Start
+    //var options = {
+    //    url: 'http://localhost:8081',
+    //    app: 'chrome'
+    //};
+    //gulp.src('views/index.ejs')
+    //    .pipe(open('', options));
 });
 
 gulp.task('mongoexpress',function(cb){
