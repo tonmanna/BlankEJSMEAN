@@ -3,11 +3,13 @@ var expressLayouts = require('express-ejs-layouts');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
+var livereload = require('connect-livereload');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var sample = require('./routes/sample');
+var debug = require('debug')('Blank_EJS_Mean');
 
 var app = express();
 
@@ -16,9 +18,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.use(favicon());
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(livereload({port: 35729}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -54,6 +59,15 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
+});
+
+
+//star program
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+    debug('Express server listening on port ' + server.address().port);
 });
 
 module.exports = app;

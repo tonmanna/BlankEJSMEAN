@@ -1,10 +1,5 @@
-Date.prototype.addHours= function(h){
-    this.setHours(this.getHours()+h);
-    return this;
-}
-
 app.filter('DateTrick',function(){
-    return function(input,start)
+    return function(input)
     {
         if(input !== null)
         {

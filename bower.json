@@ -1,20 +1,21 @@
 {
-    "name": "hayharpic",
-    "version": "0.0.1",
-    "dependencies": {
-        "angular": "~1.2.19",
-        "angular-route": "~1.2.19",
-        "angular-resource": "~1.2.19",
-        "angular-sanitize": "~1.2.19",
-        "angular-animate": "~1.2.19",
-        "angular-strap": "~2.0.0",
-        "angular-motion": "~0.3.3",
-        "jquery": "~2.1.1",
-        "bootstrap": "3.2.0",
-        "bootstrap-additions" : "0.2.2",
-        "angularAMD": "0.1.0",
-        "requirejs": "2.1.14",
-        "toastr" : "2.0.3"
-    },
-    "private": false
+  "name": "Blank_EJS_mean",
+  "version": "0.0.2",
+  "dependencies": {
+    "angular": "~1.2.28",
+    "angular-route": "~1.2.28",
+    "angular-resource": "~1.2.28",
+    "angular-sanitize": "~1.2.28",
+    "angular-animate": "~1.2.28",
+    "angular-strap": "^2.0.0",
+    "angular-motion": "^0.3.3",
+    "jquery": "~1.11.2",
+    "bootstrap": "^3.2.0",
+    "bootstrap-additions": "^0.2.2",
+    "angularAMD": "^0.2.1",
+    "requirejs": "^2.1.14",
+    "toastr": "^2.0.3",
+    "q": "^2.0.2"
+  },
+  "private": false
 }

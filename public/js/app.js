@@ -1,4 +1,11 @@
 var app = {};
+// Global Define
+Date.prototype.addHours= function(h){
+    consle.log("est");
+    this.setHours(this.getHours()+h);
+    return this;
+}
+
 define(['angularAMD','jquery', 'angular-route', 'angular-resource', 'angular-sanitize', 'angular-animate', 'angular-strap', 'angular-strap-tpl']
     , function (angularAMD,$) {
         app = angular.module("MainApp", ['ngRoute','ngSanitize','ngResource','ngAnimate','mgcrea.ngStrap']);

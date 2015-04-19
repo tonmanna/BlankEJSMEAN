@@ -26,5 +26,5 @@ require.config({
         'ngload': ['angularAMD']
     },
     deps: ['app'],
-    urlArgs: "bust=v0.01"
+    urlArgs: "bust=v0.2"
 });
